@@ -1,20 +1,17 @@
-first_users:
-    resource: "@FirstUsersBundle/Controller/"
-    type:     annotation
-    prefix:   /
+
 
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
     #
+
 #login:
-#    path: /login
-#    defaults:
-#        _controller: OCUserBundle:Security:login
-#
+#     path: /login
+
+
 #login_check:
 #    path: /login_check
-#
+
 #logout:
 #    path: /logout
 

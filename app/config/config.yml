@@ -77,3 +77,10 @@ fos_user:
     from_email:
         address: "yourapp@yourapp.com"
         sender_name: "Demo String"
+
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+
