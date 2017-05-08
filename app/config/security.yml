@@ -1,9 +1,7 @@
-# To get started with security, check out the documentation:
-# http://symfony.com/doc/current/security.html
 security:
     encoders:
-       Symfony\Component\Security\Core\User\User: plaintext
-       FirstUsersBundle\Entity\Users: sha512
+       FirstUsersBundle\Entity\Users:
+           algorithm: bcrypt
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
@@ -39,6 +37,7 @@ security:
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
             form_login:
                 provider: fos_userbundle
+                default_target_path: /dashboard
                 login_path: /login
                 check_path: /login_check
             logout:
@@ -49,5 +48,5 @@ security:
 
 
     access_control:
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
-
+      - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/dashboard, roles: IS_AUTHENTICATED_REMEMBERED }

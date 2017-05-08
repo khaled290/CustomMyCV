@@ -7,7 +7,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
 
 framework:
     #esi: ~
@@ -77,6 +77,9 @@ fos_user:
     from_email:
         address: "yourapp@yourapp.com"
         sender_name: "Demo String"
+    registration:
+        form:
+            type: FirstUsersBundle\Form\RegistrationFormType
 
 assetic:
     debug:          '%kernel.debug%'
