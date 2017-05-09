@@ -20,7 +20,7 @@ class GentelellaController extends Controller
     /**
      * Render Gentelella page.
      *
-     * @Route("gentelella/{page}", name="app_gentelella", defaults={"page": "index"})
+     * @Route("gentelella/{page}", name="app_gentelella")
      *
      * @param Request $request
      * @param string  $page
@@ -52,8 +52,10 @@ class GentelellaController extends Controller
      *
      * @return Response
      */
-    public function homepageAction(Request $request)
+    public function DashboardpageAction(Request $request)
     {
-        return $this->render('@FirstUsers/app/pages/dashboard.html.twig', []);
+        return $this->render('@FirstUsers/admin/pages/index.html.twig', []);
     }
+
+
 }

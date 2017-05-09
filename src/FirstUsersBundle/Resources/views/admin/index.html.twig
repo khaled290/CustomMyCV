@@ -1,0 +1,7 @@
+{% extends '@FirstUsers/admin/base.html.twig' %}
+
+
+{% block body %}
+Go to <a href="{{ path('app_homepage') }}">Dashboard!</a>
+    <script language="javascript">window.location.href = "{{ path('app_homepage') }}"</script>
+{% endblock %}
