@@ -4,6 +4,7 @@
     <list default="true" id="bfeb6b92-0a30-487d-9687-9a7ad88c0cc7" name="Default" comment="">
 <<<<<<< Updated upstream
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< Updated upstream
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FirstUsersBundle/Resources/views/admin/pages/index.html.twig" afterPath="$PROJECT_DIR$/src/FirstUsersBundle/Resources/views/admin/pages/index.html.twig" />
 =======
@@ -17,6 +18,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/AppBundle.php" afterPath="$PROJECT_DIR$/src/AppBundle/AppBundle.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,6 +39,7 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FirstUsersBundle/Resources/views/admin/pages/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="675">
               <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
               <folding />
@@ -78,6 +82,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
               <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+=======
+            <state relative-caret-position="630">
+              <caret line="84" column="87" lean-forward="false" selection-start-line="84" selection-start-column="87" selection-end-line="84" selection-end-column="87" />
+>>>>>>> Stashed changes
               <folding>
 <<<<<<< Updated upstream
                 <element signature="e#12#44#0#Twig" expanded="true" />
@@ -787,17 +795,25 @@
       <workItem from="1494349617177" duration="10634000" />
       <workItem from="1494360359788" duration="129000" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <workItem from="1494360616962" duration="6046000" />
 =======
       <workItem from="1494362858134" duration="57000" />
       <workItem from="1494362934221" duration="6174000" />
+>>>>>>> Stashed changes
+=======
+      <workItem from="1494360616962" duration="6757000" />
 >>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="111194000" />
+=======
+    <option name="totallyTimeSpent" value="111905000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1216,8 +1232,13 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/AppBundle.php">
 >>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="375">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+=======
+        <state relative-caret-position="630">
+          <caret line="84" column="87" lean-forward="false" selection-start-line="84" selection-start-column="87" selection-end-line="84" selection-end-column="87" />
+>>>>>>> Stashed changes
           <folding>
 <<<<<<< Updated upstream
             <element signature="e#12#44#0#Twig" expanded="true" />
