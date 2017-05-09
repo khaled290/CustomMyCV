@@ -42,7 +42,7 @@ security:
                 check_path: /login_check
             logout:
                 path:       fos_user_security_logout
-                target:     /
+                target:     /login
             remember_me:
                 secret:     %secret% # %secret% est un paramètre de parameter
 
