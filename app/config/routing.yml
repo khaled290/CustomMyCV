@@ -4,14 +4,14 @@ app:
     resource: '@AppBundle/Controller/'
     type: annotation
 
-firstuser:
-    resource: '@FirstUsersBundle/Controller/'
+user:
+    resource: '@UserBundle/Controller/'
     type: annotation
 
 #login:
     #path: /login
     #defaults:
-        #_controller: FirstUsersBundle:Security:login
+        #_controller: UserBundle:Security:login
 
 #login_check:
     #path: /login_check

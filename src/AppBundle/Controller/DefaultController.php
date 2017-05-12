@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/home", name="homepage")
+     * @Route("/", name="homepage")
      *
      */
     public function indexAction(Request $request)
@@ -21,31 +21,6 @@ class DefaultController extends Controller
         ]);
     }
 
-    /**
-     * @Route("/pdf", name="pdfexport")
-     */
 
-
-    public function pdfAction(Request $request){
-        $snappy = $this->get("knp_snappy.pdf");
-        $snappy->setOption("encoding","UTF-8");
-
-        $html = $this->renderView('@FirstUsers/admin/pages/test.html.twig', array(
-            //..Send some data to your view if you need to //
-        ));
-
-        $filename = 'myFirstSnappyPDF';
-
-        return new Response(
-            $snappy->getOutputFromHtml($html),
-            200,
-            array(
-                'Content-Type'          => 'application/pdf',
-                'Content-Disposition'   => 'inline; filename="'.$filename.'.pdf"'
-            )
-        );
-
-
-    }
 
 }

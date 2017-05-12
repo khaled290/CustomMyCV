@@ -2,7 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: "@FirstUsersBundle/Resources/config/services.yml" }
+    - { resource: "@UserBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -73,13 +73,13 @@ swiftmailer:
 fos_user:
     db_driver:     orm                       # Le type de BDD à utiliser, nous utilisons l'ORM Doctrine depuis le début
     firewall_name: main                      # Le nom du firewall derrière lequel on utilisera ces utilisateurs
-    user_class:    FirstUsersBundle\Entity\Users # La classe de l'entité User que nous utilisons
+    user_class:    UserBundle\Entity\User    # La classe de l'entité User que nous utilisons
     from_email:
         address: "yourapp@yourapp.com"
         sender_name: "Demo String"
     registration:
         form:
-            type: FirstUsersBundle\Form\RegistrationFormType
+            type: UserBundle\Form\Type\RegistrationFormType
 
 assetic:
     debug:          '%kernel.debug%'
@@ -87,20 +87,3 @@ assetic:
     filters:
         cssrewrite: ~
 
-knp_snappy:
-    pdf:
-        enabled:    true
-        # If you have wkhtmltopdf as an environment variable you don't need to provide the
-        # full path to the executable, use it in the same way as you use in the console
-        #binary:  "wkhtmltopdf"
-        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
-        options:
-          no-outline: true
-          page-size: LETTER
-                    # Recommended to set UTF-8 as default encoding :)
-          encoding: UTF-8
-    image:
-        enabled:    true
-        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
-        options:    []
-    temporary_folder: %kernel.cache_dir%/snappy

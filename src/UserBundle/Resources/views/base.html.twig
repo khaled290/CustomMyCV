@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CustomMyCV project">
+    <meta name="team" content="">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+
+    <!-- MetisMenu CSS -->
+    <link href="{{ asset('bundles/userbundle/admin/vendor/metisMenu/metisMenu.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ asset('bundles/userbundle/admin/dist/css/sb-admin-2.css') }}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{{ asset('font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- Social Buttons CSS -->
+    <link href="{{ asset('bundles/userbundle/admin/vendor/bootstrap-social/bootstrap-social.css') }}" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="{{  asset('bundles/userbundle/admin/vendor/morrisjs/morris.css') }}" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="{{  asset('bundles/userbundle/admin/vendor/datatables-plugins/dataTables.bootstrap.css') }}" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="{{  asset('bundles/userbundle/admin/vendor/datatables-responsive/dataTables.responsive.css') }}" rel="stylesheet">
+
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+
+
+</head>
+
+    <body>
+        {% block body %}{% endblock %}
+        <script src="{{ asset('jquery/jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="{{ asset('bundles/userbundle/admin/vendor/metisMenu/metisMenu.js') }}"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="{{ asset('bundles/userbundle/admin/dist/js/sb-admin-2.min.js') }}"></script>
+
+
+    </body>
+
+</html>
