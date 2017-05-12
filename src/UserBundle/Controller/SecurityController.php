@@ -22,6 +22,13 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class SecurityController extends Controller
 {
     /**
+     * @Route("/", name="homepage")
+     */
+    public function indexAction(Request $request) {
+        return $this->render('@User/default/index.html.twig');
+    }
+
+    /**
      * @param Request $request
      *
      * @return Response
