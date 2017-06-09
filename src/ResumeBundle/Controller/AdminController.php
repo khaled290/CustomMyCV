@@ -5,7 +5,7 @@
  * that was distributed with this source code.
  */
 
-namespace UserBundle\Controller;
+namespace ResumeBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -27,7 +27,7 @@ class AdminController extends Controller
      */
     public function DashboardpageAction(Request $request)
     {
-        return $this->render('@User/TemplateAdmin/views/pages/index.html.twig', []);
+        return $this->render('@Resume/TemplateAdmin/views/pages/index.html.twig', []);
     }
 
 

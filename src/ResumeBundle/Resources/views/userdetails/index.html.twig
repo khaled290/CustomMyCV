@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Userdetails list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Adresse</th>
+                <th>Code_postal</th>
+                <th>Ville</th>
+                <th>Pays</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for userDetail in userDetails %}
+            <tr>
+                <td><a href="{{ path('informations_show', { 'id': userDetail.id }) }}">{{ userDetail.id }}</a></td>
+                <td>{{ userDetail.nom }}</td>
+                <td>{{ userDetail.prenom }}</td>
+                <td>{{ userDetail.adresse }}</td>
+                <td>{{ userDetail.codepostal }}</td>
+                <td>{{ userDetail.ville }}</td>
+                <td>{{ userDetail.pays }}</td>
+                <td>{{ userDetail.email }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('informations_show', { 'id': userDetail.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('informations_edit', { 'id': userDetail.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('informations_new') }}">Create a new userDetail</a>
+        </li>
+    </ul>
+{% endblock %}
