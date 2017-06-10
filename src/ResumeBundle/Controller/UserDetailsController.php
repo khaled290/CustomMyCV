@@ -5,7 +5,8 @@ namespace ResumeBundle\Controller;
 use ResumeBundle\Entity\UserDetails;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Userdetail controller.
@@ -26,7 +27,7 @@ class UserDetailsController extends Controller
 
         $userDetails = $em->getRepository('ResumeBundle:UserDetails')->findAll();
 
-        return $this->render('userdetails/index.html.twig', array(
+        return $this->render('@Resume/userdetails/index.html.twig', array(
             'userDetails' => $userDetails,
         ));
     }
@@ -39,7 +40,7 @@ class UserDetailsController extends Controller
      */
     public function newAction(Request $request)
     {
-        $userDetail = new Userdetail();
+        $userDetail = new UserDetails();
         $form = $this->createForm('ResumeBundle\Form\UserDetailsType', $userDetail);
         $form->handleRequest($request);
 
@@ -51,7 +52,7 @@ class UserDetailsController extends Controller
             return $this->redirectToRoute('informations_show', array('id' => $userDetail->getId()));
         }
 
-        return $this->render('userdetails/new.html.twig', array(
+        return $this->render('@Resume/userdetails/new.html.twig', array(
             'userDetail' => $userDetail,
             'form' => $form->createView(),
         ));
@@ -67,7 +68,7 @@ class UserDetailsController extends Controller
     {
         $deleteForm = $this->createDeleteForm($userDetail);
 
-        return $this->render('userdetails/show.html.twig', array(
+        return $this->render('@Resume/userdetails/show.html.twig', array(
             'userDetail' => $userDetail,
             'delete_form' => $deleteForm->createView(),
         ));
