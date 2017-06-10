@@ -92,7 +92,7 @@ class UserDetailsController extends Controller
             return $this->redirectToRoute('informations_edit', array('id' => $userDetail->getId()));
         }
 
-        return $this->render('userdetails/edit.html.twig', array(
+        return $this->render('@Resume/userdetails/edit.html.twig', array(
             'userDetail' => $userDetail,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
