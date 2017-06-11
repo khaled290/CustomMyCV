@@ -5,6 +5,8 @@ namespace ResumeBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class SkillType extends AbstractType
 {
@@ -13,7 +15,21 @@ class SkillType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('categorie')->add('libelle')->add('niveau');
+        $builder
+            ->add('categorie',TextType::class, array(
+                'label' => 'Catégorie'
+            ))
+            ->add('libelle',TextType::class, array(
+                'label' => 'Nom de la compétence :'
+            ))
+            ->add('niveau',TextType::class, array(
+                'label' => 'Niveau :'
+            ))
+            ->add('resume', EntityType::class, array(
+                    'class' => 'ResumeBundle:Skill',
+                    'label' => 'Attacher au CV : ',
+                )
+            );
     }
     
     /**

@@ -9,6 +9,7 @@
                 <th>Id</th>
                 <th>Libelle</th>
                 <th>Actions</th>
+                <th>CV</th>
             </tr>
         </thead>
         <tbody>
@@ -16,6 +17,8 @@
             <tr>
                 <td><a href="{{ path('loisir_show', { 'id': hobby.id }) }}">{{ hobby.id }}</a></td>
                 <td>{{ hobby.libelle }}</td>
+                <td>{{ hobby.resume }}</td>
+                <td>{{ hobby.resume }}</td>
                 <td>
                     <ul>
                         <li>

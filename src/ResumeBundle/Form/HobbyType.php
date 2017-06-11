@@ -5,6 +5,8 @@ namespace ResumeBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class HobbyType extends AbstractType
 {
@@ -13,7 +15,15 @@ class HobbyType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('libelle');
+        $builder
+            ->add('libelle',TextType::class, array(
+                'label' => 'Nom du loisir'
+            ))
+            ->add('resume', EntityType::class, array(
+                    'class' => 'ResumeBundle:Hobby',
+                    'label' => 'Attacher au CV : ',
+                )
+            );
     }
     
     /**

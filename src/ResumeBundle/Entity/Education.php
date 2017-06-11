@@ -57,7 +57,6 @@ class Education
      *
      * @ORM\Column(name="nom_etablissement", type="string", nullable=true)
      * @Assert\NotBlank()
-     * @Assert\Date()
      *
      */
 
@@ -71,6 +70,12 @@ class Education
      */
 
     private $description;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Resume")
+     * @ORM\JoinColumn(referencedColumnName="titre")
+     */
+    private $resume;
 
 
     /**
@@ -201,5 +206,34 @@ class Education
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set resume
+     *
+     * @param \ResumeBundle\Entity\Resume $resume
+     *
+     * @return Education
+     */
+    public function setResume(\ResumeBundle\Entity\Resume $resume = null)
+    {
+        $this->resume = $resume;
+
+        return $this;
+    }
+
+    /**
+     * Get resume
+     *
+     * @return \ResumeBundle\Entity\Resume
+     */
+    public function getResume()
+    {
+        return $this->resume;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getResume();
     }
 }
