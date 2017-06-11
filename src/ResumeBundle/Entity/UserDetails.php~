@@ -3,6 +3,7 @@
 namespace ResumeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * UserDetails
@@ -25,6 +26,7 @@ class UserDetails
      * @var string
      *
      * @ORM\Column(name="nom", type="string")
+     * @Assert\NotBlank()
      *
      */
 
@@ -34,6 +36,7 @@ class UserDetails
      * @var string
      *
      * @ORM\Column(name="prenom", type="string")
+     * @Assert\NotBlank()
      *
      */
 
@@ -43,6 +46,7 @@ class UserDetails
      * @var string
      *
      * @ORM\Column(name="adresse", type="string")
+     * @Assert\NotBlank()
      *
      */
 
@@ -52,6 +56,7 @@ class UserDetails
      * @var integer
      *
      * @ORM\Column(name="code_postal", type="integer")
+     * @Assert\NotBlank()
      *
      */
 
@@ -61,6 +66,7 @@ class UserDetails
      * @var string
      *
      * @ORM\Column(name="ville", type="string")
+     * @Assert\NotBlank()
      *
      */
 
@@ -70,6 +76,7 @@ class UserDetails
      * @var string
      *
      * @ORM\Column(name="pays", type="string")
+     * @Assert\NotBlank()
      *
      */
 
@@ -79,10 +86,23 @@ class UserDetails
      * @var string
      *
      * @ORM\Column(name="email", type="string")
+     * @Assert\Email(
+     *     message = "Cet email '{{ value }}' n'est pas valide.",
      *
+     * )
      */
 
     private $email;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="permis_b", type="boolean", nullable=true)
+     *
+     *
+     */
+
+    private $permisB;
 
 
 
@@ -95,5 +115,172 @@ class UserDetails
     {
         return $this->id;
     }
-}
 
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return UserDetails
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set prenom
+     *
+     * @param string $prenom
+     *
+     * @return UserDetails
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * Get prenom
+     *
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Set adresse
+     *
+     * @param string $adresse
+     *
+     * @return UserDetails
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get adresse
+     *
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * Set codePostal
+     *
+     * @param integer $codePostal
+     *
+     * @return UserDetails
+     */
+    public function setCodePostal($codePostal)
+    {
+        $this->code_postal = $codePostal;
+
+        return $this;
+    }
+
+    /**
+     * Get codePostal
+     *
+     * @return integer
+     */
+    public function getCodePostal()
+    {
+        return $this->code_postal;
+    }
+
+    /**
+     * Set ville
+     *
+     * @param string $ville
+     *
+     * @return UserDetails
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    /**
+     * Set pays
+     *
+     * @param string $pays
+     *
+     * @return UserDetails
+     */
+    public function setPays($pays)
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    /**
+     * Get pays
+     *
+     * @return string
+     */
+    public function getPays()
+    {
+        return $this->pays;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return UserDetails
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+}

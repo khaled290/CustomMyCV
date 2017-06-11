@@ -3,6 +3,7 @@
 namespace ResumeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * UserDetails
@@ -25,6 +26,7 @@ class UserDetails
      * @var string
      *
      * @ORM\Column(name="nom", type="string")
+     * @Assert\NotBlank()
      *
      */
 
@@ -34,6 +36,7 @@ class UserDetails
      * @var string
      *
      * @ORM\Column(name="prenom", type="string")
+     * @Assert\NotBlank()
      *
      */
 
@@ -43,6 +46,7 @@ class UserDetails
      * @var string
      *
      * @ORM\Column(name="adresse", type="string")
+     * @Assert\NotBlank()
      *
      */
 
@@ -52,6 +56,7 @@ class UserDetails
      * @var integer
      *
      * @ORM\Column(name="code_postal", type="integer")
+     * @Assert\NotBlank()
      *
      */
 
@@ -61,6 +66,7 @@ class UserDetails
      * @var string
      *
      * @ORM\Column(name="ville", type="string")
+     * @Assert\NotBlank()
      *
      */
 
@@ -70,6 +76,7 @@ class UserDetails
      * @var string
      *
      * @ORM\Column(name="pays", type="string")
+     * @Assert\NotBlank()
      *
      */
 
@@ -79,10 +86,23 @@ class UserDetails
      * @var string
      *
      * @ORM\Column(name="email", type="string")
+     * @Assert\Email(
+     *     message = "Cet email '{{ value }}' n'est pas valide.",
      *
+     * )
      */
 
     private $email;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="permis_b", type="boolean", nullable=true)
+     *
+     *
+     */
+
+    private $permisB;
 
 
 
@@ -262,5 +282,29 @@ class UserDetails
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set permisB
+     *
+     * @param boolean $permisB
+     *
+     * @return UserDetails
+     */
+    public function setPermisB($permisB)
+    {
+        $this->permisB = $permisB;
+
+        return $this;
+    }
+
+    /**
+     * Get permisB
+     *
+     * @return boolean
+     */
+    public function getPermisB()
+    {
+        return $this->permisB;
     }
 }

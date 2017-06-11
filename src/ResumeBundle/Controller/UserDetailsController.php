@@ -26,7 +26,7 @@ class UserDetailsController extends Controller
 
         $userDetails = $em->getRepository('ResumeBundle:UserDetails')->findAll();
 
-        return $this->render('userdetails/index.html.twig', array(
+        return $this->render('@Resume/TemplateAdmin/views/pages/index.html.twig', array(
             'userDetails' => $userDetails,
         ));
     }
