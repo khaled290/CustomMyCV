@@ -1,21 +1,21 @@
 {% extends '@Resume/layout.html.twig' %}
 
 {% block body %}
-    <h1>Experiences list</h1>
-
-    <table>
+    <h1 class="text-center">Experiences list</h1>
+<div class="table-responsive">
+    <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nomposte</th>
-                <th>Datedebut</th>
-                <th>Datefin</th>
-                <th>Lieu</th>
-                <th>Entreprise</th>
-                <th>Missions</th>
-                <th>CV</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Nomposte</th>
+            <th>Datedebut</th>
+            <th>Datefin</th>
+            <th>Lieu</th>
+            <th>Entreprise</th>
+            <th>Missions</th>
+            <th>CV</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for experience in experiences %}
@@ -29,23 +29,24 @@
                 <td>{{ experience.missions }}</td>
                 <td>{{ experience.resume }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('experience_show', { 'id': experience.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('experience_edit', { 'id': experience.id }) }}">edit</a>
-                        </li>
-                    </ul>
+
+                            <a href="{{ path('experience_show', { 'id': experience.id }) }}"><i class="fa fa-2x fa-eye" aria-hidden="true"></i></a>
+
+                            <a href="{{ path('experience_edit', { 'id': experience.id }) }}"><i class="fa fa-2x fa-pencil" aria-hidden="true"></i></a>
+
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('experience_new') }}">Create a new experience</a>
-        </li>
-    </ul>
+
+</div>
+
+    <a href="{{ path('experience_new') }}">
+        <button type="button" class="btn btn-primary">
+            Nouvelle experience professionnel  <i class="fa  fa-2x fa-plus"  style="font-size:30px; vertical-align: middle;" aria-hidden="true"></i>
+        </button>
+    </a>
+
 {% endblock %}

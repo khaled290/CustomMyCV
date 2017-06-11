@@ -1,17 +1,17 @@
 {% extends '@Resume/layout.html.twig' %}
 
 {% block body %}
-    <h1>Resumes list</h1>
-
-    <table>
+    <h1 class="text-center">Resumes list</h1>
+<div class="table-responsive">
+    <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Datecreation</th>
-                <th>Description</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Datecreation</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for resume in resumes %}
@@ -22,22 +22,22 @@
                 <td>{{ resume.description }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('resume_show', { 'id': resume.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('resume_edit', { 'id': resume.id }) }}">edit</a>
-                        </li>
+
+                            <a href="{{ path('resume_show', { 'id': resume.id }) }}"><i class="fa fa-2x fa-eye" aria-hidden="true"></i></a>
+
+                            <a href="{{ path('resume_edit', { 'id': resume.id }) }}"><i class="fa fa-2x fa-pencil" aria-hidden="true"></i></a>
+
                     </ul>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+</div>
+    <a href="{{ path('resume_new') }}">
+        <button type="button" class="btn btn-primary">
+            Nouvelle information   <i class="fa  fa-2x fa-plus"  style="font-size:30px; vertical-align: middle;" aria-hidden="true"></i>
+        </button>
+    </a>
 
-    <ul>
-        <li>
-            <a href="{{ path('resume_new') }}">Create a new resume</a>
-        </li>
-    </ul>
 {% endblock %}

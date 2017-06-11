@@ -1,9 +1,12 @@
 {% extends '@Resume/layout.html.twig' %}
 
 {% block body %}
-    <h1>Experience</h1>
-
-    <table>
+<div class="col-lg-8 " style="margin-top:80px">
+    <div class="panel panel-primary " >
+        <div class="panel-heading text-center">Expérience</div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -39,18 +42,46 @@
             </tr>
         </tbody>
     </table>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="col-lg-8 " style="margin-top:40px">
 
-    <ul>
-        <li>
-            <a href="{{ path('experience_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('experience_edit', { 'id': experience.id }) }}">Edit</a>
-        </li>
-        <li>
+        <div class="col-lg-6">
+            <a href="{{ path('experience_index') }}">
+                <button type="submit" class="btn btn-default btn-block">
+                    <i class="fa fa-chevron-circle-left"  style="font-size:30px; vertical-align: middle;" aria-hidden="true"></i> Back to the list
+                </button>
+            </a>
+        </div>
+        <div class="col-lg-6">
+            <a  href="{{ path('experience_edit', { 'id': experience.id }) }}">
+                <button type="submit" class="btn btn-info btn-block">
+                    Edit <i class="fa fa-2x fa-pencil"  style="font-size:30px; vertical-align: middle;" aria-hidden="true"></i>
+                </button>
+            </a>
+        </div>
+        <br>
+
+        <div class="col-lg-6 col-lg-offset-3" style="margin-top:15px">
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+
+            <button type="submit" class="btn btn-danger btn-block">
+                Delete   <i class="  fa-2x fa fa-trash-o"  style="font-size:30px; vertical-align: middle;" aria-hidden="true"></i>
+            </button>
+
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
 {% endblock %}

@@ -72,8 +72,9 @@ class Education
     private $description;
 
     /**
+     * @var int
      * @ORM\ManyToOne(targetEntity="Resume")
-     * @ORM\JoinColumn(referencedColumnName="titre")
+     * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $resume;
 
