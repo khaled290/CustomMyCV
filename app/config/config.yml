@@ -65,22 +65,25 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
+    username:  '%mailer_user%'
+    password:  '%mailer_password%'
+    transport:  '%mailer_transport%'
+    host:       '%mailer_host%'
     spool: { type: memory }
+    encryption: ssl
 
 fos_user:
     db_driver:     orm                       # Le type de BDD à utiliser, nous utilisons l'ORM Doctrine depuis le début
     firewall_name: main                      # Le nom du firewall derrière lequel on utilisera ces utilisateurs
     user_class:    UserBundle\Entity\User    # La classe de l'entité User que nous utilisons
     from_email:
-        address: "yourapp@yourapp.com"
-        sender_name: "Demo String"
+        address: "CustomMyCV@custom.com"
+        sender_name: "Administrator"
     registration:
         form:
             type: UserBundle\Form\Type\RegistrationFormType
+        confirmation:
+            enabled: true
 
 assetic:
     debug:          '%kernel.debug%'
