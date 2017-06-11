@@ -27,11 +27,8 @@ class UserDetailsController extends Controller
 
         $userDetails = $em->getRepository('ResumeBundle:UserDetails')->findAll();
 
-<<<<<<< HEAD:src/ResumeBundle/Controller/Entites/UserDetailsController.php
-        return $this->render('@Resume/TemplateAdmin/views/pages/index.html.twig', array(
-=======
-        return $this->render('@Resume/userdetails/index.html.twig', array(
->>>>>>> khaledCustomUser:src/ResumeBundle/Controller/UserDetailsController.php
+
+        return $this->render('@Resume/entities/userdetails/index.html.twig', array(
             'userDetails' => $userDetails,
         ));
     }
@@ -56,7 +53,7 @@ class UserDetailsController extends Controller
             return $this->redirectToRoute('informations_show', array('id' => $userDetail->getId()));
         }
 
-        return $this->render('@Resume/userdetails/new.html.twig', array(
+        return $this->render('@Resume/entities/userdetails/new.html.twig', array(
             'userDetail' => $userDetail,
             'form' => $form->createView(),
         ));
@@ -72,7 +69,7 @@ class UserDetailsController extends Controller
     {
         $deleteForm = $this->createDeleteForm($userDetail);
 
-        return $this->render('@Resume/userdetails/show.html.twig', array(
+        return $this->render('@Resume/entities/userdetails/show.html.twig', array(
             'userDetail' => $userDetail,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -96,7 +93,7 @@ class UserDetailsController extends Controller
             return $this->redirectToRoute('informations_edit', array('id' => $userDetail->getId()));
         }
 
-        return $this->render('@Resume/userdetails/edit.html.twig', array(
+        return $this->render('@Resume/entities/userdetails/edit.html.twig', array(
             'userDetail' => $userDetail,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
