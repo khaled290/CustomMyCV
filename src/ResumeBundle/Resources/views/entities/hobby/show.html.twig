@@ -1,0 +1,32 @@
+{% extends '@Resume/layout.html.twig' %}
+
+{% block body %}
+    <h1>Hobby</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ hobby.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ hobby.libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('loisir_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('loisir_edit', { 'id': hobby.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

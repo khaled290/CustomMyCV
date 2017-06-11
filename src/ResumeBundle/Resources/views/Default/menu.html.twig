@@ -9,7 +9,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html.twig"><i class="fa fa-dashboard fa-fw"></i>Tableau de bord</a>
+                            <a href="{{ path('app_homepage') }}"><i class="fa fa-dashboard fa-fw"></i>Tableau de bord</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-edit fa-fw"></i>Mon CV<span class="fa arrow"></span></a>
@@ -18,16 +18,16 @@
                                     <a href="{{ path('informations_index') }}">Informations</a>
                                 </li>
                                 <li>
-                                    <a href="#">Expériences</a>
+                                    <a href="{{ path('experience_index') }}">Expériences</a>
                                 </li>
                                 <li>
-                                    <a href="#">Compétences</a>
+                                    <a href="{{ path('competence_index') }}">Compétences</a>
                                 </li>
                                 <li>
-                                    <a href="#">Formation</a>
+                                    <a href="{{ path('formation_index') }}">Formation</a>
                                 </li>
                                 <li>
-                                    <a href="#">Loisirs</a>
+                                    <a href="{{ path('loisir_index') }}">Loisirs</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

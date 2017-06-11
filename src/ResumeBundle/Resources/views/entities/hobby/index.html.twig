@@ -1,0 +1,39 @@
+{% extends '@Resume/layout.html.twig' %}
+
+{% block body %}
+    <h1>Hobbies list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hobby in hobbies %}
+            <tr>
+                <td><a href="{{ path('loisir_show', { 'id': hobby.id }) }}">{{ hobby.id }}</a></td>
+                <td>{{ hobby.libelle }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('loisir_show', { 'id': hobby.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('loisir_edit', { 'id': hobby.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('loisir_new') }}">Create a new hobby</a>
+        </li>
+    </ul>
+{% endblock %}

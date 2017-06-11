@@ -1,0 +1,52 @@
+{% extends '@Resume/layout.html.twig' %}
+
+{% block body %}
+    <h1>Experience</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ experience.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomposte</th>
+                <td>{{ experience.nomPoste }}</td>
+            </tr>
+            <tr>
+                <th>Datedebut</th>
+                <td>{% if experience.dateDebut %}{{ experience.dateDebut|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datefin</th>
+                <td>{% if experience.dateFin %}{{ experience.dateFin|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ experience.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Entreprise</th>
+                <td>{{ experience.entreprise }}</td>
+            </tr>
+            <tr>
+                <th>Missions</th>
+                <td>{{ experience.missions }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('experience_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('experience_edit', { 'id': experience.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

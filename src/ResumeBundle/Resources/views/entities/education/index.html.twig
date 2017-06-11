@@ -1,0 +1,47 @@
+{% extends '@Resume/layout.html.twig' %}
+
+{% block body %}
+    <h1>Educations list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Intitule</th>
+                <th>Datedebut</th>
+                <th>Datefin</th>
+                <th>Nometablissement</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for education in educations %}
+            <tr>
+                <td><a href="{{ path('formation_show', { 'id': education.id }) }}">{{ education.id }}</a></td>
+                <td>{{ education.intitule }}</td>
+                <td>{% if education.dateDebut %}{{ education.dateDebut|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if education.dateFin %}{{ education.dateFin|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ education.nomEtablissement }}</td>
+                <td>{{ education.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('formation_show', { 'id': education.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('formation_edit', { 'id': education.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('formation_new') }}">Create a new education</a>
+        </li>
+    </ul>
+{% endblock %}

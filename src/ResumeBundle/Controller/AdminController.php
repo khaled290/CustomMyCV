@@ -18,6 +18,8 @@ use Symfony\Component\HttpFoundation\Response;
 class AdminController extends Controller
 {
 
+
+
     /**
      * @Route("/dashboard", name="app_homepage")
      *
