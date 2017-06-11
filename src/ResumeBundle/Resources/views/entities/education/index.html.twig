@@ -12,6 +12,7 @@
                 <th>Datefin</th>
                 <th>Nometablissement</th>
                 <th>Description</th>
+                <th>CV</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -24,6 +25,7 @@
                 <td>{% if education.dateFin %}{{ education.dateFin|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ education.nomEtablissement }}</td>
                 <td>{{ education.description }}</td>
+                <td>{{ education.resume }}</td>
                 <td>
                     <ul>
                         <li>

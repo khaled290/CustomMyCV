@@ -3,8 +3,13 @@
 namespace ResumeBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+
 
 class EducationType extends AbstractType
 {
@@ -13,7 +18,27 @@ class EducationType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('intitule')->add('dateDebut')->add('dateFin')->add('nomEtablissement')->add('description');
+        $builder
+            ->add('intitule',TextType::class, array(
+                'label' => 'Intitulé de la formation : '
+            ))
+            ->add('dateDebut',DateType::class, array(
+                'label' => 'Date de Début :'
+            ))
+            ->add('dateFin',DateType::class, array(
+                'label' => 'Date de Fin'
+            ))
+            ->add('nomEtablissement',TextType::class, array(
+                'label' => 'Nom de l\'établissement :'
+            ))
+            ->add('description',TextareaType::class, array(
+                'label' => 'Description'
+            ))
+            ->add('resume', EntityType::class, array(
+                'class' => 'ResumeBundle:Education',
+                'label' => 'Attacher au CV : ',
+            )
+        );
     }
     
     /**

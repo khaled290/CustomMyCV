@@ -83,6 +83,15 @@ class Experience
     private $missions;
 
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Resume")
+     * @ORM\JoinColumn(referencedColumnName="id")
+     */
+    private $resume;
+
+
+
+
 
     /**
      * Get id
@@ -236,5 +245,34 @@ class Experience
     public function getMissions()
     {
         return $this->missions;
+    }
+
+    /**
+     * Set resume
+     *
+     * @param \ResumeBundle\Entity\Resume $resume
+     *
+     * @return Experience
+     */
+    public function setResume(\ResumeBundle\Entity\Resume $resume = null)
+    {
+        $this->resume = $resume;
+
+        return $this;
+    }
+
+    /**
+     * Get resume
+     *
+     * @return \ResumeBundle\Entity\Resume
+     */
+    public function getResume()
+    {
+        return $this->resume;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getResume();
     }
 }
