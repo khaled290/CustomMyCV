@@ -57,7 +57,6 @@ class Education
      *
      * @ORM\Column(name="nom_etablissement", type="string", nullable=true)
      * @Assert\NotBlank()
-     * @Assert\Date()
      *
      */
 
@@ -237,4 +236,5 @@ class Education
     {
         return (string) $this->getResume();
     }
+
 }

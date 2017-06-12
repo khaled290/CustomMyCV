@@ -72,10 +72,10 @@ class Education
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Resume")
-     * @ORM\JoinColumn(referencedColumnName="titre")
+     * @ORM\ManyToOne(targetEntity="Resume", inversedBy="educations")
+     * @ORM\JoinColumn(referencedColumnName="id")
      */
-    private $resume;
+    protected $resume;
 
 
     /**
@@ -232,8 +232,6 @@ class Education
         return $this->resume;
     }
 
-    public function __toString()
-    {
-        return (string) $this->getResume();
-    }
+
+
 }

@@ -5,6 +5,7 @@ namespace ResumeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints\Collection;
 
 
 /**
@@ -28,7 +29,7 @@ class Resume
     /**
      * @var string
      *
-     * @ORM\Column(name="titre", type="string", nullable=false)
+     * @ORM\Column(name="titre", type="string")
      * @Assert\NotBlank()
      *
      */
@@ -55,6 +56,14 @@ class Resume
      */
 
     private $description;
+
+    /**
+     * Extrait de la classe Education
+     * @var Collection $resume
+     *
+     * @ORM\OneToMany(targetEntity="Education", mappedBy="resume")
+     */
+    private $educations;
 
 
 

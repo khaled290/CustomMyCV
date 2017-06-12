@@ -3,8 +3,10 @@
 namespace ResumeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints\Collection;
 
 
 /**
@@ -56,7 +58,10 @@ class Resume
 
     private $description;
 
-
+    /**
+     * @ORM\OneToMany(targetEntity="Education", mappedBy="resume")
+     */
+    protected $educations;
 
 
 
@@ -73,6 +78,7 @@ class Resume
     public function __construct()
     {
         $this->date = new \DateTime();
+
     }
 
     /**
@@ -146,6 +152,15 @@ class Resume
     {
         return $this->description;
     }
+
+
+
+
+
+
+
+
+
 
 
 
