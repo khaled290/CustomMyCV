@@ -23,10 +23,10 @@ class ResumeType extends AbstractType
                 'label' => 'Titre du CV :'
             ))
             ->add('dateCreation',DateType::class , array(
-                'label' => 'Date de création'
+                'label' => 'Date de création :'
             ))
             ->add('description', TextareaType::class , array(
-                'label' => 'Description'
+                'label' => 'Description :'
             ));
     }
     

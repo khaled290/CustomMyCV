@@ -19,7 +19,7 @@ class SkillType extends AbstractType
     {
         $builder
             ->add('categorie',TextType::class, array(
-                'label' => 'Catégorie'
+                'label' => 'Catégorie :'
             ))
             ->add('libelle',TextType::class, array(
                 'label' => 'Nom de la compétence :'

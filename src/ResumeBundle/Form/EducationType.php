@@ -28,13 +28,13 @@ class EducationType extends AbstractType
                 'label' => 'Date de Début :'
             ))
             ->add('dateFin',DateType::class, array(
-                'label' => 'Date de Fin'
+                'label' => 'Date de Fin :'
             ))
             ->add('nomEtablissement',TextType::class, array(
                 'label' => 'Nom de l\'établissement :'
             ))
             ->add('description',TextareaType::class, array(
-                'label' => 'Description'
+                'label' => 'Description :'
             ))
             ->add('resume', EntityType::class, array(
             'label' => 'Attacher au CV : ',
