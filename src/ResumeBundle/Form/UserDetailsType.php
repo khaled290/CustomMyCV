@@ -13,7 +13,9 @@ class UserDetailsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('prenom')->add('adresse')->add('code_postal')->add('ville')->add('pays')->add('email');
+        $builder
+            ->add('nom')
+            ->add('prenom')->add('adresse')->add('code_postal')->add('ville')->add('pays')->add('email');
     }
     
     /**
