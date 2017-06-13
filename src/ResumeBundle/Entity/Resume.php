@@ -58,11 +58,13 @@ class Resume
 
     private $description;
 
+
     /**
-     * @ORM\OneToMany(targetEntity="Education", mappedBy="resume")
+     * @var Education
+     *
+     * @ORM\OneToMany(targetEntity="Education", mappedBy="educations")
      */
     protected $educations;
-
 
 
     /**
@@ -77,6 +79,7 @@ class Resume
 
     public function __construct()
     {
+        $this->educations = new ArrayCollection();
         $this->date = new \DateTime();
 
     }
@@ -169,4 +172,39 @@ class Resume
 
 
 
+
+
+    /**
+     * Add education
+     *
+     * @param \ResumeBundle\Entity\Education $education
+     *
+     * @return Resume
+     */
+    public function addEducation(\ResumeBundle\Entity\Education $education)
+    {
+        $this->educations[] = $education;
+
+        return $this;
+    }
+
+    /**
+     * Remove education
+     *
+     * @param \ResumeBundle\Entity\Education $education
+     */
+    public function removeEducation(\ResumeBundle\Entity\Education $education)
+    {
+        $this->educations->removeElement($education);
+    }
+
+    /**
+     * Get educations
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEducations()
+    {
+        return $this->educations;
+    }
 }

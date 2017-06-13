@@ -3,6 +3,7 @@
 namespace ResumeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints\Collection;
@@ -57,16 +58,11 @@ class Resume
 
     private $description;
 
+
     /**
-     * Extrait de la classe Education
-     * @var Collection $resume
-     *
-     * @ORM\OneToMany(targetEntity="Education", mappedBy="resume")
+     * @ORM\OneToMany(targetEntity="Education", mappedBy="educations")
      */
     private $educations;
-
-
-
 
 
     /**
@@ -81,7 +77,9 @@ class Resume
 
     public function __construct()
     {
+        $this->educations = new ArrayCollection();
         $this->date = new \DateTime();
+
     }
 
     /**
@@ -157,7 +155,54 @@ class Resume
     }
 
 
+    public function __toString()
+    {
+        return $this->titre;
+    }
 
 
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Add education
+     *
+     * @param \ResumeBundle\Entity\Education $education
+     *
+     * @return Resume
+     */
+    public function addEducation(\ResumeBundle\Entity\Education $education)
+    {
+        $this->educations[] = $education;
+
+        return $this;
+    }
+
+    /**
+     * Remove education
+     *
+     * @param \ResumeBundle\Entity\Education $education
+     */
+    public function removeEducation(\ResumeBundle\Entity\Education $education)
+    {
+        $this->educations->removeElement($education);
+    }
+
+    /**
+     * Get educations
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEducations()
+    {
+        return $this->educations;
+    }
 }

@@ -5,6 +5,7 @@ namespace ResumeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
+
 /**
  * Education
  *
@@ -72,10 +73,10 @@ class Education
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Resume")
-     * @ORM\JoinColumn(referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="ResumeBundle\Entity\Resume")
+     * @ORM\JoinColumn(name="resume", referencedColumnName="id")
      */
-    private $resume;
+    protected $resume;
 
 
     /**

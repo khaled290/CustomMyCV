@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/vendor/royopa/fpdf-symfony2" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/setasign/fpdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/setasign/fpdi" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/setasign/fpdi-fpdf" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
@@ -13,6 +18,22 @@
         <SOURCES>
           <root url="phar://$MODULE_DIR$/vendor/twig/twig/test/Twig/Tests/Loader/Fixtures/phar/phar-sample.phar/" />
           <root url="phar://$MODULE_DIR$/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/royopa/fpdf-symfony2" />
+          <root url="file://$MODULE_DIR$/vendor/setasign/fpdf" />
+          <root url="file://$MODULE_DIR$/vendor/setasign/fpdi" />
+          <root url="file://$MODULE_DIR$/vendor/setasign/fpdi-fpdf" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/royopa/fpdf-symfony2" />
+          <root url="file://$MODULE_DIR$/vendor/setasign/fpdf" />
+          <root url="file://$MODULE_DIR$/vendor/setasign/fpdi" />
+          <root url="file://$MODULE_DIR$/vendor/setasign/fpdi-fpdf" />
         </SOURCES>
       </library>
     </orderEntry>

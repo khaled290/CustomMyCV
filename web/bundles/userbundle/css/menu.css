@@ -1,0 +1,13 @@
+.img-small {
+    height: 50px;
+    width: 50px;
+    border-radius: 10%;
+    font-family: "Courier New", Courier, monospace;
+    padding-right: 5px;
+}
+
+.sidebar-search {
+    background-color: aliceblue;
+}
+
+

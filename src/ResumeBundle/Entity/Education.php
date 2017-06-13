@@ -73,8 +73,10 @@ class Education
     private $description;
 
     /**
-     * @ORM\JoinColumn(referencedColumnName="id")
-     * @ORM\ManyToOne(targetEntity="Resume")
+     * @var Resume
+     *
+     * @ORM\ManyToOne(targetEntity="ResumeBundle\Entity\Resume", inversedBy="educations")
+     * @ORM\JoinColumn(name="resume", referencedColumnName="id")
      */
     protected $resume;
 

@@ -7,6 +7,7 @@
 
 namespace ResumeBundle\Controller;
 
+use ResumeBundle\Entity\Resume;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,6 +31,32 @@ class AdminController extends Controller
     public function DashboardpageAction(Request $request)
     {
         return $this->render('@Resume/TemplateAdmin/views/pages/index.html.twig', []);
+    }
+
+
+    /**
+     * @Route("/pdf/{id}", name="pdf")
+     */
+    public function pdfAction(Request $request)
+    {
+        $resume = new Resume();
+        $resume = $this->getDoctrine()
+            ->getManager()
+            ->getRepository('ResumeBundle:Resume')
+            ->findAll();
+        $template = $this->renderView('@Resume/entities/resume/pdf.html.twig',array('Resumes'=>$resume));
+
+
+        $pdf = new \FPDF();
+
+        $pdf->AddPage();
+        $pdf->SetFont('Arial','B',16);
+        $pdf->Cell(40,10,$template);
+
+
+        return new Response($pdf->Output(), 200, array(
+            'Content-Type' => 'application/pdf',
+        ));
     }
 
 
