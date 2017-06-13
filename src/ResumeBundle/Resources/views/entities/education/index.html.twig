@@ -1,20 +1,20 @@
 {% extends '@Resume/layout.html.twig' %}
 
 {% block body %}
-    <h1>Educations list</h1>
-
-    <table>
+    <h1 class="text-center">Educations list</h1>
+<div class="table-responsive">
+    <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Intitule</th>
-                <th>Datedebut</th>
-                <th>Datefin</th>
-                <th>Nometablissement</th>
-                <th>Description</th>
-                <th>CV</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Intitule</th>
+            <th>Datedebut</th>
+            <th>Datefin</th>
+            <th>Nometablissement</th>
+            <th>Description</th>
+            <th>CV</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for education in educations %}
@@ -27,23 +27,24 @@
                 <td>{{ education.description }}</td>
                 <td>{{ education.resume }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('formation_show', { 'id': education.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('formation_edit', { 'id': education.id }) }}">edit</a>
-                        </li>
-                    </ul>
+
+                            <a href="{{ path('formation_show', { 'id': education.id }) }}"><i class="fa fa-2x fa-eye" aria-hidden="true"></i></a>
+
+                            <a href="{{ path('formation_edit', { 'id': education.id }) }}"><i class="fa fa-2x fa-pencil" aria-hidden="true"></i></a>
+
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('formation_new') }}">Create a new education</a>
-        </li>
-    </ul>
+</div>
+
+
+    <a href="{{ path('formation_new') }}">
+        <button type="button" class="btn btn-primary">
+            Create a new education   <i class="fa  fa-2x fa-plus"  style="font-size:30px; vertical-align: middle;" aria-hidden="true"></i>
+        </button>
+    </a>
+
 {% endblock %}

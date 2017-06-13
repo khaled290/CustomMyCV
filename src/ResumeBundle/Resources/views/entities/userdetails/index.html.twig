@@ -3,21 +3,21 @@
 
 
 {% block body %}
-    <h1>Userdetails list</h1>
-
-    <table>
+    <h1 class="text-center">Userdetails list</h1>
+<div class="table-responsive">
+    <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Adresse</th>
-                <th>Code_postal</th>
-                <th>Ville</th>
-                <th>Pays</th>
-                <th>Email</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Identifiant</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Adresse</th>
+            <th>Code postal</th>
+            <th>Ville</th>
+            <th>Pays</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for userDetail in userDetails %}
@@ -31,23 +31,20 @@
                 <td>{{ userDetail.pays }}</td>
                 <td>{{ userDetail.email }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('informations_show', { 'id': userDetail.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('informations_edit', { 'id': userDetail.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('informations_show', { 'id': userDetail.id }) }}"> <i class="fa fa-2x fa-eye" aria-hidden="true"></i></a>
+
+                    <a href="{{ path('informations_edit', { 'id': userDetail.id }) }}"><i class="fa fa-2x fa-pencil" aria-hidden="true"></i></a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+</div>
+    <a href="{{ path('informations_new') }}">
+    <button type="button" class="btn btn-primary">
+        Nouvelle information   <i class="fa  fa-2x fa-plus"  style="font-size:30px; vertical-align: middle;" aria-hidden="true"></i>
+    </button>
+    </a>
 
-    <ul>
-        <li>
-            <a href="{{ path('informations_new') }}">Create a new userDetail</a>
-        </li>
-    </ul>
+
 {% endblock %}

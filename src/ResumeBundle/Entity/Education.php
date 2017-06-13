@@ -5,6 +5,7 @@ namespace ResumeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
+
 /**
  * Education
  *
@@ -72,8 +73,8 @@ class Education
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Resume", inversedBy="educations")
      * @ORM\JoinColumn(referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Resume")
      */
     protected $resume;
 
@@ -232,6 +233,9 @@ class Education
         return $this->resume;
     }
 
-
+    public function __toString()
+    {
+        return (string) $this->getResume();
+    }
 
 }
