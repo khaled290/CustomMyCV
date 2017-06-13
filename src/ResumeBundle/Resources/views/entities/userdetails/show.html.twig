@@ -1,43 +1,46 @@
 {% extends '@Resume/layout.html.twig' %}
 
 {% block body %}
-<div class="col-lg-8 " style="margin-top:80px">
-    <div class="panel panel-primary " >
-        <div class="panel-heading text-center">Userdetail</div>
+<div style="margin-top:80px">
+    <div class="panel " >
+        <div class="panel-heading text-center" style="background-color: #d9beba ; border-color: #d9beba">Utilisateur</div>
         <div class="panel-body">
             <div class="table-responsive">
                 <table class="table">
+                    <thead>
+                    <th>Identifiant</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Adresse</th>
+                    <th>Code postal</th>
+                    <th>Ville</th>
+                    <th>Pays</th>
+                    <th>Email</th>
+                    </thead>
                     <tbody>
+
                     <tr>
-                        <th>Id</th>
                         <td>{{ userDetail.id }}</td>
-                    </tr>
-                    <tr>
-                        <th>Nom</th>
+
+
                         <td>{{ userDetail.nom }}</td>
-                    </tr>
-                    <tr>
-                        <th>Prenom</th>
+
+
                         <td>{{ userDetail.prenom }}</td>
-                    </tr>
-                    <tr>
-                        <th>Adresse</th>
+
+
                         <td>{{ userDetail.adresse }}</td>
-                    </tr>
-                    <tr>
-                        <th>Code_postal</th>
+
+
                         <td>{{ userDetail.codepostal }}</td>
-                    </tr>
-                    <tr>
-                        <th>Ville</th>
+
+
                         <td>{{ userDetail.ville }}</td>
-                    </tr>
-                    <tr>
-                        <th>Pays</th>
+
+
                         <td>{{ userDetail.pays }}</td>
-                    </tr>
-                    <tr>
-                        <th>Email</th>
+
+
                         <td>{{ userDetail.email }}</td>
                     </tr>
                     </tbody>
@@ -46,7 +49,7 @@
         </div>
     </div>
 </div>
-<div class="col-lg-8 " style="margin-top:40px">
+<div  style="margin-top:40px">
 
 <div class="col-lg-6">
     <a href="{{ path('informations_index') }}">

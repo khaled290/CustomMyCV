@@ -1,48 +1,44 @@
 {% extends '@Resume/layout.html.twig' %}
 
 {% block body %}
-<div class="col-lg-8 " style="margin-top:80px">
-    <div class="panel panel-primary " >
-        <div class="panel-heading text-center">Education</div>
+<div  style="margin-top:80px">
+    <div class="panel  "  >
+        <div class="panel-heading text-center" style="background-color: #d9beba ; border-color: #d9beba" >Formation</div>
         <div class="panel-body">
             <div class="table-responsive">
                 <table class="table">
-        <tbody>
+<thead>
+<tr>
+    <th>Identifiant</th>
+    <th>Intitulé</th>
+    <th>Date de début</th>
+    <th>Date de fin</th>
+    <th>Nome de l'établissement</th>
+    <th>Description</th>
+    <th>Nom CV</th>
+
+</tr>
+</thead>
+
+                    <tbody>
             <tr>
-                <th>Id</th>
                 <td>{{ education.id }}</td>
-            </tr>
-            <tr>
-                <th>Intitule</th>
                 <td>{{ education.intitule }}</td>
-            </tr>
-            <tr>
-                <th>Datedebut</th>
                 <td>{% if education.dateDebut %}{{ education.dateDebut|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Datefin</th>
                 <td>{% if education.dateFin %}{{ education.dateFin|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Nometablissement</th>
                 <td>{{ education.nomEtablissement }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
                 <td>{{ education.description }}</td>
-            </tr>
-            <tr>
-                <th>Nom CV</th>
                 <td>{{ education.resume }}</td>
+
             </tr>
+
         </tbody>
     </table>
             </div>
         </div>
     </div>
 </div>
-    <div class="col-lg-8 " style="margin-top:40px">
+    <div  style="margin-top:40px">
 
         <div class="col-lg-6">
             <a href="{{ path('formation_index') }}">

@@ -1,27 +1,31 @@
 {% extends '@Resume/layout.html.twig' %}
 
 {% block body %}
-<div class="col-lg-8 " style="margin-top:80px">
-    <div class="panel panel-primary " >
-        <div class="panel-heading text-center">Userdetail</div>
+<div  style="margin-top:80px">
+    <div class="panel  ">
+        <div class="panel-heading text-center" style="background-color: #d9beba ; border-color: #d9beba">Détail du CV </div>
         <div class="panel-body">
             <div class="table-responsive">
                 <table class="table">
+
+                    <thead>
+                    <th>Id</th>
+                    <th>Titre</th>
+                    <th>Date de création</th>
+                    <th>Description</th>
+                    </thead>
         <tbody>
             <tr>
-                <th>Id</th>
+
                 <td>{{ resume.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
+
+
                 <td>{{ resume.titre }}</td>
-            </tr>
-            <tr>
-                <th>Datecreation</th>
+
+
                 <td>{% if resume.dateCreation %}{{ resume.dateCreation|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
+
+
                 <td>{{ resume.description }}</td>
             </tr>
         </tbody>
@@ -34,7 +38,7 @@
 
 
 
-    <div class="col-lg-8 " style="margin-top:40px">
+    <div  style="margin-top:40px">
 
         <div class="col-lg-6">
             <a href="{{ path('resume_index') }}">

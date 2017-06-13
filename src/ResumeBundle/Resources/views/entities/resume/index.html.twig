@@ -1,14 +1,14 @@
 {% extends '@Resume/layout.html.twig' %}
 
 {% block body %}
-    <h1 class="text-center">Resumes list</h1>
+    <h1 class="text-center">Vos CV</h1>
 <div class="table-responsive">
     <table class="table">
         <thead>
         <tr>
-            <th>Id</th>
+            <th>Identifiant</th>
             <th>Titre</th>
-            <th>Datecreation</th>
+            <th>Date de creation</th>
             <th>Description</th>
             <th>Actions</th>
         </tr>
@@ -21,11 +21,8 @@
                 <td>{% if resume.dateCreation %}{{ resume.dateCreation|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ resume.description }}</td>
                 <td>
-
-                            <a href="{{ path('resume_show', { 'id': resume.id }) }}"><i class="fa fa-2x fa-eye" aria-hidden="true"></i></a>
-
-                            <a href="{{ path('resume_edit', { 'id': resume.id }) }}"><i class="fa fa-2x fa-pencil" aria-hidden="true"></i></a>
-
+                    <a href="{{ path('resume_show', { 'id': resume.id }) }}"><i class="fa fa-2x fa-eye" aria-hidden="true"></i></a>
+                    <a href="{{ path('resume_edit', { 'id': resume.id }) }}"><i class="fa fa-2x fa-pencil" aria-hidden="true"></i></a>
                 </td>
             </tr>
         {% endfor %}
@@ -33,7 +30,7 @@
     </table>
 </div>
     <a href="{{ path('resume_new') }}">
-        <button type="button" class="btn btn-primary">
+        <button type="button" class="btn btn-success">
             Nouvelle information   <i class="fa  fa-2x fa-plus"  style="font-size:30px; vertical-align: middle;" aria-hidden="true"></i>
         </button>
     </a>

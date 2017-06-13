@@ -1,23 +1,26 @@
 {% extends '@Resume/layout.html.twig' %}
 
 {% block body %}
-<div class="col-lg-8 " style="margin-top:80px">
-    <div class="panel panel-primary " >
-        <div class="panel-heading text-center">Hobby</div>
+<div style="margin-top:80px">
+    <div class="panel " >
+        <div class="panel-heading text-center" style="background-color: #d9beba ; border-color: #d9beba">Hobby</div>
         <div class="panel-body">
             <div class="table-responsive">
                 <table class="table">
+                    <thead>
+                    <th>Identifiant</th>
+                    <th>Libelle</th>
+                    <th>Nom CV</th>
+                    </thead>
         <tbody>
             <tr>
-                <th>Id</th>
+
                 <td>{{ hobby.id }}</td>
-            </tr>
-            <tr>
-                <th>Libelle</th>
+
+
                 <td>{{ hobby.libelle }}</td>
-            </tr>
-            <tr>
-                <th>Nom CV</th>
+
+
                 <td>{{ hobby.resume }}</td>
             </tr>
         </tbody>
@@ -26,7 +29,7 @@
         </div>
     </div>
 </div>
-    <div class="col-lg-8 " style="margin-top:40px">
+    <div  style="margin-top:40px">
 
         <div class="col-lg-6">
             <a href="{{ path('loisir_index') }}">
