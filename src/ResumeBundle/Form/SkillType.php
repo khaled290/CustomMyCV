@@ -2,6 +2,7 @@
 
 namespace ResumeBundle\Form;
 
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -27,8 +28,9 @@ class SkillType extends AbstractType
                 'label' => 'Niveau :'
             ))
             ->add('resume', EntityType::class, array(
-                    'class' => 'ResumeBundle:Skill',
                     'label' => 'Attacher au CV : ',
+                    'class' => Resume::class,
+
                 )
             );
     }

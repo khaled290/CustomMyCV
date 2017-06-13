@@ -37,11 +37,11 @@ class ExperienceType extends AbstractType
             ->add('missions',TextareaType::class, array(
                 'label' => 'Missions attribués :'
             ))
-            ->add('resume',EntityType::class, array(
-                    'class' => 'ResumeBundle:Experience',
-                    'label' => 'Attacher au CV : ',
-                )
-            );
+            ->add('resume', EntityType::class, array(
+                'label' => 'Attacher au CV : ',
+                'class' => Resume::class,
+
+            ));
     }
     
     /**

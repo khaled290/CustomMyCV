@@ -21,10 +21,10 @@ class HobbyType extends AbstractType
                 'label' => 'Nom du loisir'
             ))
             ->add('resume', EntityType::class, array(
-                    'class' => 'ResumeBundle:Hobby',
-                    'label' => 'Attacher au CV : ',
-                )
-            );
+                'label' => 'Attacher au CV : ',
+                'class' => Resume::class,
+
+            ));
     }
     
     /**

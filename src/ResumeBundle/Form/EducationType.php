@@ -3,7 +3,6 @@
 namespace ResumeBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -36,13 +35,14 @@ class EducationType extends AbstractType
             ))
             ->add('description',TextareaType::class, array(
                 'label' => 'Description'
-            ));
+            ))
+            ->add('resume', EntityType::class, array(
+            'label' => 'Attacher au CV : ',
+            'class' => Resume::class,
 
-        ## ->add('resume'); #}
-
-
-
+    ));
     }
+        ## ->add('resume'); #}
     
     /**
      * {@inheritdoc}
