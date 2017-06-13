@@ -9,3 +9,5 @@ services:
         tags:
             - { name: form.type, alias: userbundle_user_registration }
         arguments: ['@?']
+    resumebundle.entites.resumeController:
+        class: ResumeBundle\Controller\Entites\ResumeController

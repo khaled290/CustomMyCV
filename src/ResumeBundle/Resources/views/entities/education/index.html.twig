@@ -1,18 +1,18 @@
 {% extends '@Resume/layout.html.twig' %}
 
 {% block body %}
-    <h1 class="text-center">Educations list</h1>
+    <h1 class="text-center">Formations</h1>
 <div class="table-responsive">
     <table class="table">
         <thead>
         <tr>
             <th>Id</th>
-            <th>Intitule</th>
-            <th>Datedebut</th>
-            <th>Datefin</th>
-            <th>Nometablissement</th>
+            <th>Intitulé</th>
+            <th>Date de but</th>
+            <th>Date de fin</th>
+            <th>Nom de l'établissement</th>
             <th>Description</th>
-            <th>CV</th>
+            <th>CV associé</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -42,8 +42,8 @@
 
 
     <a href="{{ path('formation_new') }}">
-        <button type="button" class="btn btn-primary">
-            Create a new education   <i class="fa  fa-2x fa-plus"  style="font-size:30px; vertical-align: middle;" aria-hidden="true"></i>
+        <button type="button" class="btn btn-success">
+            nouvelle formation  <i class="fa  fa-2x fa-plus"  style="font-size:30px; vertical-align: middle;" aria-hidden="true"></i>
         </button>
     </a>
 

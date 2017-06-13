@@ -133,4 +133,14 @@ class ResumeController extends Controller
             ->getForm()
         ;
     }
+
+    public function listResume()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $listResume = $em->getRepository('ResumeBundle:Resume')->findAll();
+
+        return $this->render('@Resume/entities/resume/listResume.html.twig', array(
+            'resumes' => $listResume,
+        ));
+    }
 }

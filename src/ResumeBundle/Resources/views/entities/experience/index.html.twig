@@ -1,52 +1,55 @@
 {% extends '@Resume/layout.html.twig' %}
 
 {% block body %}
-    <h1 class="text-center">Experiences list</h1>
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nomposte</th>
-            <th>Datedebut</th>
-            <th>Datefin</th>
-            <th>Lieu</th>
-            <th>Entreprise</th>
-            <th>Missions</th>
-            <th>CV</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for experience in experiences %}
+
+<div class="row">
+    <h1 class="text-center">Toutes vos expériences professionnelles </h1>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
             <tr>
-                <td><a href="{{ path('experience_show', { 'id': experience.id }) }}">{{ experience.id }}</a></td>
-                <td>{{ experience.nomPoste }}</td>
-                <td>{% if experience.dateDebut %}{{ experience.dateDebut|date('Y-m-d') }}{% endif %}</td>
-                <td>{% if experience.dateFin %}{{ experience.dateFin|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ experience.lieu }}</td>
-                <td>{{ experience.entreprise }}</td>
-                <td>{{ experience.missions }}</td>
-                <td>{{ experience.resume }}</td>
-                <td>
-
-                            <a href="{{ path('experience_show', { 'id': experience.id }) }}"><i class="fa fa-2x fa-eye" aria-hidden="true"></i></a>
-
-                            <a href="{{ path('experience_edit', { 'id': experience.id }) }}"><i class="fa fa-2x fa-pencil" aria-hidden="true"></i></a>
-
-                </td>
+                <th>Identifiant</th>
+                <th>Nom du poste occupé</th>
+                <th>Date de debut</th>
+                <th>Date de fin</th>
+                <th>Lieu</th>
+                <th>Entreprise</th>
+                <th>Missions</th>
+                <th>CV associé</th>
+                <th>Actions</th>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for experience in experiences %}
+                <tr>
+                    <td><a href="{{ path('experience_show', { 'id': experience.id }) }}">{{ experience.id }}</a></td>
+                    <td>{{ experience.nomPoste }}</td>
+                    <td>{% if experience.dateDebut %}{{ experience.dateDebut|date('Y-m-d') }}{% endif %}</td>
+                    <td>{% if experience.dateFin %}{{ experience.dateFin|date('Y-m-d') }}{% endif %}</td>
+                    <td>{{ experience.lieu }}</td>
+                    <td>{{ experience.entreprise }}</td>
+                    <td>{{ experience.missions }}</td>
+                    <td>{{ experience.resume }}</td>
+                    <td>
 
+                        <a href="{{ path('experience_show', { 'id': experience.id }) }}"><i class="fa fa-2x fa-eye" aria-hidden="true"></i></a>
 
+                        <a href="{{ path('experience_edit', { 'id': experience.id }) }}"><i class="fa fa-2x fa-pencil" aria-hidden="true"></i></a>
+
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 </div>
-
+</div>
+<div class="row">
     <a href="{{ path('experience_new') }}">
-        <button type="button" class="btn btn-primary">
-            Nouvelle experience professionnel  <i class="fa  fa-2x fa-plus"  style="font-size:30px; vertical-align: middle;" aria-hidden="true"></i>
+        <button type="button" class="btn btn-success">
+            Nouvelle experience professionnelle  <i class="fa  fa-2x fa-plus"  style="font-size:30px; vertical-align: middle;" aria-hidden="true"></i>
         </button>
     </a>
+</div>
+
 
 {% endblock %}

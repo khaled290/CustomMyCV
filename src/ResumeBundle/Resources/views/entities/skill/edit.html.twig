@@ -4,7 +4,7 @@
 
     <div class="col-lg-8  " style="margin-top: 80px">
         <div class="panel panel-primary">
-            <div class="panel-heading text-center">Skill edit</div>
+            <div class="panel-heading text-center">Modification d'une compétence</div>
             <div class="panel-body">
                 {% form_theme edit_form 'bootstrap_3_horizontal_layout.html.twig'  %}
                 {{ form_start(edit_form) }}
@@ -19,15 +19,8 @@
                     </div>
                 </div>
                 {{ form_end(edit_form) }}
-
-
-
             </div>
-
-
         </div>
-
-
     </div>
     <div class="col-lg-8 " style="margin-top:40px">
 
@@ -47,14 +40,8 @@
             <button type="submit" class="btn btn-danger btn-block">
                 Delete   <i class="  fa-2x fa fa-trash-o"  style="font-size:30px; vertical-align: middle;" aria-hidden="true"></i>
             </button>
-
             {{ form_end(delete_form) }}
         </div>
-
-
-
-
-
     </div>
 
 {% endblock %}
